@@ -3,6 +3,7 @@
  */
 package test;
 
+//author : Raphael date : 20/04/2016
 /**
  * @author INTI-0332
  *
@@ -52,6 +53,12 @@ public class Village extends Ville{
 	public Village(String nomVille) {
 		super(nomVille);
 		// TODO Auto-generated constructor stub
+	}
+
+	public String toString() {
+		return "Village [getNomVille()=" + getNomVille() + ", getNomPays()=" + getNomPays() + ", getNbreHabitants()="
+				+ getNbreHabitants() + ", getSuperficie()=" + getSuperficie() + ", getMaire()=" + getMaire()
+				+ ", getNomHabitants()=" + getNomHabitants() + ", getCategorie()=" + getCategorie() + "]";
 	}
 	
 
