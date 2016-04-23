@@ -1,7 +1,7 @@
 /**
  * 
  */
-package test;
+package fr.adaming.javaoo;
 
 //author : Raphael date : 21/04/2016
 /**

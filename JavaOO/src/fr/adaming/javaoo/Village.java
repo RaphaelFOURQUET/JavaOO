@@ -1,7 +1,7 @@
 /**
  * 
  */
-package test;
+package fr.adaming.javaoo;
 
 //author : Raphael date : 20/04/2016
 /**
@@ -22,10 +22,12 @@ public class Village extends Ville{
 	/**
 	 * @param nomVille
 	 * @param nbreHabitants
+	 * @throws NombreHabitantsException 
+	 * @throws NomVilleException 
 	 */
-	public Village(String nomVille, int nbreHabitants) {
+	public Village(String nomVille, int nbreHabitants) throws NombreHabitantsException, NomVilleException {
 		super(nomVille, nbreHabitants);
-		// TODO Auto-generated constructor stub
+		// Auto-generated constructor stub
 	}
 
 	/**
@@ -35,7 +37,7 @@ public class Village extends Ville{
 	 */
 	public Village(String nomVille, String nomPays, int nbreHabitants) {
 		super(nomVille, nomPays, nbreHabitants);
-		// TODO Auto-generated constructor stub
+		// Auto-generated constructor stub
 	}
 
 	/**
@@ -44,7 +46,7 @@ public class Village extends Ville{
 	 */
 	public Village(String nomVille, String nomPays) {
 		super(nomVille, nomPays);
-		// TODO Auto-generated constructor stub
+		// Auto-generated constructor stub
 	}
 
 	/**
@@ -52,7 +54,7 @@ public class Village extends Ville{
 	 */
 	public Village(String nomVille) {
 		super(nomVille);
-		// TODO Auto-generated constructor stub
+		// Auto-generated constructor stub
 	}
 
 	public String toString() {

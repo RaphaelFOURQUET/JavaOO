@@ -1,7 +1,7 @@
 /**
  * 
  */
-package test;
+package fr.adaming.javaoo;
 
 //author : Raphael date : 20/04/2016
 /**
@@ -16,15 +16,15 @@ public class Ville {
 	private String maire;
 	private String nomHabitants;
 	private char categorie;
-	
+
 	//Variables publiques qui comptent les instances  
 	public static int nbreVilles = 0;
-	
+
 	//Variable privée qui comptera aussi les instances
 	private static int nbreVillesBis = 0; 
 
 	//Get/Set
-	
+
 	public static int getNbreVillesBis() {
 		return nbreVillesBis;
 	}
@@ -70,7 +70,7 @@ public class Ville {
 		this.nbreHabitants = nbreHabitants;
 		choixCategorie();
 	}
-	
+
 	/**
 	 * @return the superficie
 	 */
@@ -112,7 +112,7 @@ public class Ville {
 	public void setNomHabitants(String nomHabitants) {
 		this.nomHabitants = nomHabitants;
 	}
-	
+
 	public char getCategorie() {
 		return categorie;
 	}
@@ -145,13 +145,22 @@ public class Ville {
 	 * @param nomVille Nom de la ville.
 	 * @param nbreHabitants Nombre d'habitants.
 	 */
-	public Ville(String nomVille, int nbreHabitants) {
+	public Ville(String nomVille, int nbreHabitants)
+			throws NomVilleException, NombreHabitantsException {
+
+		if(nbreHabitants < 0)
+			throw new NombreHabitantsException(nbreHabitants);
+		if(nomVille.length() < 3)
+			throw new NomVilleException("Le nom de la ville est inférieur à 3 caractères ! nom = " + nomVille); 
+
 		this.nomVille = nomVille;
 		this.nbreHabitants = nbreHabitants;
 		nomPays = "Inconnu";
 		choixCategorie();
+
 		nbreVilles++;
 		nbreVillesBis++;
+
 	}
 
 	/**
@@ -182,7 +191,7 @@ public class Ville {
 		nbreVilles++;
 		nbreVillesBis++;
 	}
-	
+
 	public Ville(String nomVille, String nomPays, int nbreHabitants, double superficie, String maire, String nomHabitants) {
 		this.nomVille = nomVille;
 		this.nomPays = nomPays;
@@ -194,7 +203,7 @@ public class Ville {
 		nbreVilles++;
 		nbreVillesBis++;
 	}
-	
+
 	public String toString() {
 		return "Ville [nomVille=" + nomVille + ", nomPays=" + nomPays + ", nbreHabitants=" + nbreHabitants
 				+ ", superficie=" + superficie + ", maire=" + maire + ", nomHabitants=" + nomHabitants + ", categorie="
@@ -219,7 +228,7 @@ public class Ville {
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		return result;
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
@@ -228,15 +237,15 @@ public class Ville {
 		//On vérifie si les references d'objet sont identiques.
 		if (this == obj)
 			return true;
-		
+
 		//Si objet null
 		if (obj == null)
 			return false;
-		
+
 		//Verification de la classe des objets.
 		if (getClass() != obj.getClass())
 			return false;
-		
+
 		//Comparaison des attributs
 		Ville other = (Ville) obj;
 		if (categorie != other.categorie)
@@ -267,7 +276,7 @@ public class Ville {
 			return false;
 		return true;
 	}
-	
+
 	private void choixCategorie() {	//plus propre par set comme dans la solution p79 mais si tableau tres grand else if mieux.
 		if(this.nbreHabitants == 0)
 			categorie = '?';
@@ -276,9 +285,9 @@ public class Ville {
 		else if(this.nbreHabitants < 10_000)
 			categorie = 'B';
 		else categorie = 'C';
-		
+
 	}
-	
+
 	public String comparer(Ville v) {
 		String res = " ";
 		if(this.nbreHabitants < v.getNbreHabitants())
