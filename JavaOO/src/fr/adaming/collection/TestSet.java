@@ -11,7 +11,7 @@ import java.util.Iterator;
  *
  */
 public class TestSet {	//RFRF : Set Pas de doublons mais utile pour manipuler un grand nombre de données.
-						//RFRF : TreeSet pour une collection constamment trié.
+						//RFRF : TreeSet pour une collection constamment triée.
 
 	/**
 	 * @param args
