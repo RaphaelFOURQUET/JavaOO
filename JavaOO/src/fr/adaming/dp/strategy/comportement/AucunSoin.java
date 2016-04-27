@@ -10,7 +10,7 @@ package fr.adaming.dp.strategy.comportement;
 public class AucunSoin implements ISoin {
 
 	/* (non-Javadoc)
-	 * @see fr.adaming.dpstrategy.ISoin#soigne()
+	 * @see fr.adaming.dpstrategy.ISoin#soigner()
 	 */
 	@Override
 	public void soigner() {

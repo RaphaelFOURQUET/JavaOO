@@ -17,7 +17,13 @@ public abstract class Personnage {
 	 //Nos instances de comportement
 	protected IEspritCombatif espritCombatif = new Pacifiste();
 	protected ISoin soin = new AucunSoin();
-	protected IDeplacement deplacement = new Marcher();
+	protected IDeplacement deplacement = new IDeplacement() {	//RFRF : modif classe anonyme.
+		@Override
+		public void deplacer() {
+			System.out.println("Je me deplace en marchant !");
+
+		}
+	};
 	
 	//RFRF : Accesseurs
 //	/**
